@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "BTService_GrowMoundLocation.h"
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -31,7 +28,6 @@ void UBTService_GrowMoundLocation::TickNode(UBehaviorTreeComponent &OwnerComp, u
             break;
         }
     }
-
     if (GrowMound == nullptr)
     {
         OwnerComp.GetBlackboardComponent()->ClearValue(GetSelectedBlackboardKey());
@@ -40,5 +36,4 @@ void UBTService_GrowMoundLocation::TickNode(UBehaviorTreeComponent &OwnerComp, u
     {
         OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), GrowMound);
     }
-
 }

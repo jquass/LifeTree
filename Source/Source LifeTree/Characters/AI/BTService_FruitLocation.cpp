@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "BTService_FruitLocation.h"
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -28,5 +25,4 @@ void UBTService_FruitLocation::TickNode(UBehaviorTreeComponent &OwnerComp, uint8
         UE_LOG(LogTemp, Display, TEXT("Fruits! %s"), *(FruitLocation.ToCompactString()));
         OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), Fruits[0]);
     }
-
 }

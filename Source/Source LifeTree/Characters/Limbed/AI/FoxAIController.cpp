@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "FoxAIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "../GrowableCharacter.h"
@@ -10,7 +8,6 @@ void AFoxAIController::OnPossess(APawn * InPawn)
 
     if (AIBehavior == nullptr) return;
 
-    RunBehaviorTree(AIBehavior);
-    
+    RunBehaviorTree(AIBehavior);    
     GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), InPawn->GetActorLocation());	
 }

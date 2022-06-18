@@ -1,12 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Spawner.h"
 
 ASpawner::ASpawner()
 {
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
 void ASpawner::BeginPlay()
@@ -22,7 +18,7 @@ void ASpawner::SpawnBatch()
 	if (BatchesSpawned >= TotalBatches) return;
 
 	BatchesSpawned++;
-	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &ASpawner::Spawn, SpawnRate, false);
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &ASpawner::Spawn, BatchSpawnRate, false);
 }
 
 void ASpawner::Spawn()
@@ -31,7 +27,7 @@ void ASpawner::Spawn()
 	if (SpawnedInBatch >= BatchSize)
 	{
 		SpawnedInBatch = 0;
-		GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &ASpawner::SpawnBatch, BatchSpawnRate, false);
+		GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &ASpawner::SpawnBatch, SpawnRate, false);
 		return;
 	}
 	float SpawnRadiusX = GetSpawnRadius();

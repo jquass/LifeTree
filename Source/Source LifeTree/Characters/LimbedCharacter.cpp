@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "LimbedCharacter.h"
 #include "../Actors/Item.h"
 #include "DrawDebugHelpers.h"
@@ -42,8 +39,6 @@ void ALimbedCharacter::UseItem()
 		AIController->GetBlackboardComponent()->SetValueAsBool(TEXT("AreHandsFull"), AreLimbsFull());
 	}
 }
-
-
 
 bool ALimbedCharacter::AreLimbsFull() const
 {

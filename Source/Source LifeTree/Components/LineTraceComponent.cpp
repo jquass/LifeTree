@@ -1,11 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "LineTraceComponent.h"
 #include "DrawDebugHelpers.h"
 #include "GameFramework/Character.h"
 
-// Sets default values for this component's properties
 ULineTraceComponent::ULineTraceComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
